@@ -28,3 +28,58 @@ ESP32 and MPU6050 working. Basic complementary filter running. WHO_AM_I address 
 From now on, I will stop denoting each log with a Week, and instead just log the date in standard format (DD/MM/YYYY).
 --- 
 
+## 21/07/2026
+### TVC Mount Rings Finalised
+
+Motor Mount (Inner Ring), Center Ring, and Outer Ring bases finalised with exact screw, bearing, and servo dimensions. Will move onto building supports for the FC + battery + ESC.
+
+---
+## 30/07/2026
+### Exported Thrust stand file and sliced in Cura
+
+Thrust stand dimensions checked once more in FreeCAD, exported as a .3mf file (Cura is having problems with .stl files), sliced as a .gcode file and placed on 16GB SD card, ready for printing tomorrow.
+
+---
+## 31/07/2026
+###  Thrust Stand Printed!!
+
+Thrust Stand successfuly printed at school's Ender 3 Pro, dimensions checked with caliper. Finalising and commiting .3mf file to Github.
+
+---
+## 02/08/2026
+### Exported Center Ring and Motor Mount in Cura slicer
+
+Center Ring and Motor Mount are now ready for printing, exported as .gcode file for printing on school's Ender 3 Pro. Will commit .3mf files when Outer Ring is ready for printing and also exported.
+
+---
+## 03/08/2026
+### Moved Motor Mount servo from Outer Ring to Center Ring
+
+Realised that push rods connecting servos to mounts will experience bending (as well as servo horns).
+
+Root cause:
+- Both servos are placed on the same ring.
+- No ball-jointed pushrods available.
+- Servo mounts dont match caliper readings.
+
+Solution:
+- Placed MotorMount Servo on the Center Ring.
+- Re-desinged servo mounts to match real-life caliper measurements.
+
+Result: Outer Ring is ready for flight computer mount and battery mount bracket fitting.
+
+---
+## 04/08/2026
+### HX711 Sample Rate Investigation
+
+Initially observed inconsistent sample rates.
+
+Root cause:
+- Incorrect wiring.
+- HX711 RATE pin left in 10 SPS configuration.
+
+Modification:
+- Connected RATE pin to VCC.
+
+Result:
+- Measured sample rate ≈ 89.6 Hz.
